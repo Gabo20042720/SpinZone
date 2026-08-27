@@ -1,68 +1,59 @@
-:root {
-    --primary: #1e293b;
-    --accent: #3b82f6;
-    --bg: #f8fafc;
+/* Estilos para Paneles de Administración y Tablas */
+.admin-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg);
-}
-
-header {
-    background-color: var(--primary);
-    color: white;
-    padding: 1rem 2rem;
+.admin-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
+.tabla-admin th, 
+.tabla-admin td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabla-admin th {
+    background-color: #f1f5f9;
+    color: #334155;
     font-weight: bold;
 }
 
-main {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 0 20px;
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 0.85rem;
 }
 
-.card {
-    background: white;
-    border: 1px solid #e2e8f0;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+.btn-edit {
+    background-color: #f59e0b;
 }
 
-.btn {
-    display: inline-block;
-    background-color: var(--accent);
+.btn-delete {
+    background-color: #ef4444;
+    border: none;
     color: white;
-    padding: 8px 16px;
-    text-decoration: none;
+    cursor: pointer;
     border-radius: 4px;
 }
 
-footer {
-    background-color: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.link-volver {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--accent);
+    text-decoration: none;
 }

@@ -3,28 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - SpinZone</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>SpinZone - Tenis de Mesa & Ping Pong</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Panel Administrador</h1>
+        <div class="logo">
+            <h1>SpinZone 🏓</h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="producto-mostrar.html">Productos</a></li>
-                <li><a href="usuario-mostrar.html">Usuarios</a></li>
-                <li><a href="../index.html">Cerrar Sesión</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="#" class="carrito-icon">🛒 <span>0</span></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Panel de Control</h2>
-        <p>Bienvenido al sistema administrativo de SpinZone.</p>
+        <!-- Banner Principal -->
+        <section class="banner">
+            <h2>Bienvenido a SpinZone</h2>
+            <p>Especialistas en maderas, gomas, pelotas y equipamiento profesional de Tenis de Mesa.</p>
+            <a href="productos.html" class="btn">Ver Catálogo</a>
+        </section>
+
+        <!-- Lista de Productos Destacados -->
+        <section class="productos-destacados">
+            <h2>Equipamiento Destacado</h2>
+            <div class="grid-productos">
+                <article class="card">
+                    <img src="https://via.placeholder.com/200" alt="Paleta Profesional">
+                    <h3>Paleta Profesional Carbono Off+</h3>
+                    <p class="precio">$45.000</p>
+                    <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+                </article>
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/200" alt="Goma SpinMaster">
+                    <h3>Goma SpinMaster Pro 2.0mm</h3>
+                    <p class="precio">$28.000</p>
+                    <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+                </article>
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/200" alt="Pelotas ITTF">
+                    <h3>Set Pelotas 3 Estrellas ITTF (6u)</h3>
+                    <p class="precio">$8.900</p>
+                    <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 SpinZone Admin</p>
+        <p>&copy; 2026 SpinZone. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
