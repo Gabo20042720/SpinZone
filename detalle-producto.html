@@ -2,29 +2,44 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpinZone - Detalle Producto</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>SpinZone</h1>
+        <div class="logo">
+            <h1>SpinZone 🎮</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="#" class="carrito-icon">🛒 <span>0</span></a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <div class="card">
-            <h2>Consola PS4</h2>
-            <img src="assets/img/producto1.jpg" alt="PS4">
-            <p><strong>Precio:</strong> $190.000</p>
-            <p>Consola usada en excelente estado con 500GB de almacenamiento y 1 control.</p>
-            <button class="btn">Comprar</button>
+        <div class="card" style="max-width: 600px; margin: 0 auto; text-align: left;">
+            <img src="https://via.placeholder.com/400" alt="Consola PS4" style="width: 100%; height: auto;">
+            <h2>Consola PS4 Slim 500GB</h2>
+            <p class="precio">$190.000</p>
+            <p><strong>Estado:</strong> Excelente estado, incluye cable HDMI, cable de alimentación y 1 control original.</p>
+            <p><strong>Garantía:</strong> 3 meses por fallas de fábrica.</p>
+            <button class="btn" style="width: 100%; margin-top: 15px;">Añadir al Carrito 🛒</button>
+            <br><br>
+            <a href="productos.html">← Volver al catálogo</a>
         </div>
     </main>
-    <footer><p>&copy; 2026 SpinZone</p></footer>
+
+    <footer>
+        <p>&copy; 2026 SpinZone. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

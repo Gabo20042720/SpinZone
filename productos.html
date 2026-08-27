@@ -2,12 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpinZone - Productos</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>SpinZone</h1>
+        <div class="logo">
+            <h1>SpinZone 🎮</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -17,20 +20,39 @@
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Iniciar Sesión</a></li>
                 <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="#" class="carrito-icon">🛒 <span>0</span></a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <h2>Catálogo de Productos</h2>
         <div class="grid-productos">
             <article class="card">
-                <img src="assets/img/producto1.jpg" alt="Consola PS4">
-                <h3>Consola PS4</h3>
-                <p>$190.000</p>
+                <img src="https://via.placeholder.com/200" alt="Consola PS4">
+                <h3>Consola PS4 Slim 500GB</h3>
+                <p class="precio">$190.000</p>
+                <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+            </article>
+
+            <article class="card">
+                <img src="https://via.placeholder.com/200" alt="Control DualShock 4">
+                <h3>Control DualShock 4</h3>
+                <p class="precio">$45.000</p>
+                <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+            </article>
+
+            <article class="card">
+                <img src="https://via.placeholder.com/200" alt="Videojuego">
+                <h3>Juego God of War Ragnarök</h3>
+                <p class="precio">$35.000</p>
                 <a href="detalle-producto.html" class="btn">Ver Detalle</a>
             </article>
         </div>
     </main>
-    <footer><p>&copy; 2026 SpinZone</p></footer>
+
+    <footer>
+        <p>&copy; 2026 SpinZone. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

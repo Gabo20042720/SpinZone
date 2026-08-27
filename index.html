@@ -8,7 +8,9 @@
 </head>
 <body>
     <header>
-        <h1>SpinZone</h1>
+        <div class="logo">
+            <h1>SpinZone 🎮</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -18,18 +20,48 @@
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Iniciar Sesión</a></li>
                 <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="#" class="carrito-icon">🛒 <span>0</span></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- Componente Principal: Información e Imagen de la tienda -->
         <section class="banner">
             <h2>Bienvenido a SpinZone</h2>
-            <p>La mejor tienda de videojuegos y consolas.</p>
-            <a href="productos.html" class="btn">Ver Catálogo</a>
+            <p>Tu tienda especializada en consolas, videojuegos y accesorios gamer al mejor precio.</p>
+            <a href="productos.html" class="btn">Ver Todo el Catálogo</a>
+        </section>
+
+        <!-- Lista de Productos Destacados -->
+        <section class="productos-destacados">
+            <h2>Productos Destacados</h2>
+            <div class="grid-productos">
+                <article class="card">
+                    <img src="https://via.placeholder.com/200" alt="Consola PS4">
+                    <h3>Consola PS4 Slim 500GB</h3>
+                    <p class="precio">$190.000</p>
+                    <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+                </article>
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/200" alt="Control DualShock 4">
+                    <h3>Control DualShock 4</h3>
+                    <p class="precio">$45.000</p>
+                    <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+                </article>
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/200" alt="Videojuego">
+                    <h3>Juego God of War Ragnarök</h3>
+                    <p class="precio">$35.000</p>
+                    <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+                </article>
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 SpinZone. Todos los derechos reservados.</p>
     </footer>
