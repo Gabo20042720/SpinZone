@@ -1,61 +1,73 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("form-contacto");
-    if (!form) return;
+    // Validaciones de Formularios en Tiempo Real
+    const formContacto = document.getElementById("form-contacto");
+    const formRegistro = document.getElementById("form-registro");
+    const formLogin = document.getElementById("form-login");
 
-    const nombre = document.getElementById("nombre");
-    const email = document.getElementById("email");
-    const rut = document.getElementById("rut");
-
-    // Eventos de entrada en tiempo real
-    nombre.addEventListener("input", validarNombre);
-    email.addEventListener("input", validarEmail);
-    rut.addEventListener("input", validarRut);
-
-    function validarNombre() {
-        const error = document.getElementById("error-nombre");
-        if (nombre.value.trim() === "") {
-            error.textContent = "El nombre no puede estar vacío.";
-            return false;
-        } else {
-            error.textContent = "";
-            return true;
-        }
+    if (formContacto) {
+        setupValidation("form-contacto", ["nombre", "email", "rut"]);
     }
 
-    function validarEmail() {
-        const error = document.getElementById("error-email");
-        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!regexEmail.test(email.value.trim())) {
-            error.textContent = "Ingrese un correo electrónico válido.";
-            return false;
-        } else {
-            error.textContent = "";
-            return true;
-        }
+    if (formRegistro) {
+        setupValidation("form-registro", ["nombre", "email", "rut", "password"]);
     }
 
-    function validarRut() {
-        const error = document.getElementById("error-rut");
-        if (rut.value.trim().length < 8) {
-            error.textContent = "El RUT debe tener al menos 8 caracteres.";
-            return false;
-        } else {
-            error.textContent = "";
-            return true;
-        }
+    if (formLogin) {
+        formLogin.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // Redirige al administrador al iniciar sesión
+            window.location.href = "admin/index.html";
+        });
     }
 
-    // Validación al enviar
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    function setupValidation(formId, fields) {
+        const form = document.getElementById(formId);
+        fields.forEach(field => {
+            const input = document.getElementById(field);
+            if (input) {
+                input.addEventListener("input", () => validateField(input));
+            }
+        });
 
-        const esNombreValido = validarNombre();
-        const esEmailValido = validarEmail();
-        const esRutValido = validarRut();
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let isValid = true;
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                if (input && !validateField(input)) isValid = false;
+            });
+            if (isValid) {
+                alert("Formulario procesado con éxito.");
+                form.reset();
+            }
+        });
+    }
 
-        if (esNombreValido && esEmailValido && esRutValido) {
-            alert("Formulario enviado con éxito.");
-            form.reset();
+    function validateField(input) {
+        const errorSpan = document.getElementById(`error-${input.id}`);
+        if (!errorSpan) return true;
+
+        if (input.value.trim() === "") {
+            errorSpan.textContent = "Este campo es obligatorio.";
+            return false;
         }
-    });
+
+        if (input.id === "email") {
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regexEmail.test(input.value.trim())) {
+                errorSpan.textContent = "Correo inválido.";
+                return false;
+            }
+        }
+
+        if (input.id === "rut") {
+            if (input.value.trim().length < 8) {
+                errorSpan.textContent = "RUT debe tener al menos 8 caracteres.";
+                return false;
+            }
+        }
+
+        errorSpan.textContent = "";
+        return true;
+    }
 });
