@@ -19,10 +19,14 @@ body {
 header {
     background-color: var(--color-principal);
     color: white;
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header h1 {
+    margin: 0;
 }
 
 nav ul {
@@ -39,23 +43,28 @@ nav a {
     font-weight: bold;
 }
 
+nav a:hover {
+    color: var(--color-secundario);
+}
+
 main {
     flex: 1;
     padding: 20px;
 }
 
-/* Grilla de Productos con CSS Grid */
+/* Grilla de Productos (CSS Grid) */
 .grid-productos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
 
 .card-producto {
     background: white;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -65,13 +74,28 @@ main {
     border-radius: 4px;
 }
 
+.card-producto button, form button {
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.card-producto button:hover, form button:hover {
+    background-color: #2980b9;
+}
+
 /* Formulario */
 .formulario-container {
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .form-group {
@@ -82,12 +106,14 @@ main {
 
 .form-group label {
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
-.form-group input {
-    padding: 8px;
+.form-group input, .form-group textarea {
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-family: inherit;
 }
 
 .error-msg {
@@ -101,13 +127,14 @@ footer {
     background-color: var(--color-principal);
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
 
-/* Diseños Responsivos con Media Queries */
+/* Responsivo */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
         gap: 10px;
+        text-align: center;
     }
 }
