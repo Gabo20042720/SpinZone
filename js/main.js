@@ -1,16 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. Capturar elementos del DOM
     const form = document.getElementById("form-contacto");
-    if (!form) return;
+    if (!form) return; // Si no estamos en contacto.html, detiene la ejecución
 
     const nombre = document.getElementById("nombre");
     const email = document.getElementById("email");
     const rut = document.getElementById("rut");
 
-    // Eventos en tiempo real con 'input'
+    // 2. Escuchar eventos en tiempo real
     nombre.addEventListener("input", validarNombre);
     email.addEventListener("input", validarEmail);
     rut.addEventListener("input", validarRut);
 
+    // 3. Funciones de validación
     function validarNombre() {
         const error = document.getElementById("error-nombre");
         if (nombre.value.trim() === "") {
@@ -45,8 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // 4. Envío del formulario
     form.addEventListener("submit", (e) => {
         e.preventDefault();
+
         const esNombreValido = validarNombre();
         const esEmailValido = validarEmail();
         const esRutValido = validarRut();
