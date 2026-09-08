@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpinZone - Catálogo Tenis de Mesa</title>
+    <title>SpinZone - Catálogo de Productos</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <header>
         <div class="logo">
             <h1>SpinZone 🏓</h1>
@@ -25,35 +26,38 @@
         </nav>
     </header>
 
-    <main>
-        <h2>Catálogo de Equipamiento</h2>
-        <div class="grid-productos">
-            <article class="card">
-                <img src="https://via.placeholder.com/200" alt="Maderamen">
-                <h3>Paleta Profesional Carbono Off+</h3>
-                <p class="precio">$45.000</p>
-                <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+    <main style="max-width: 1100px; margin: 0 auto; padding: 2rem 1rem;">
+        <h2 style="margin-bottom: 1.5rem;">Catálogo de Equipamiento</h2>
+
+        <div class="product-grid">
+            <!-- Producto 1 -->
+            <article class="product-card">
+                <div style="height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="img/paleta.jpg" alt="Madero Paleta K11 Loki" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                <h3>Madero Paleta Profesional Tenis De Mesa 7 Capas K11 Loki</h3>
+                <p class="price">$32.990</p>
+                <a href="detalle-producto.html#madero" class="btn">Ver Detalle</a>
             </article>
 
-            <article class="card">
-                <img src="https://via.placeholder.com/200" alt="Goma Pro">
-                <h3>Goma SpinMaster Pro 2.0mm</h3>
-                <p class="precio">$28.000</p>
-                <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+            <!-- Producto 2 -->
+            <article class="product-card">
+                <div style="height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="img/goma.jpg" alt="Goma Loki Arthur Asia" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                <h3>Goma Tenis de Mesa Loki Arthur Asia</h3>
+                <p class="price">$27.990</p>
+                <a href="detalle-producto.html#goma" class="btn">Ver Detalle</a>
             </article>
 
-            <article class="card">
-                <img src="https://via.placeholder.com/200" alt="Pelotas ITTF">
-                <h3>Set Pelotas 3 Estrellas ITTF (6u)</h3>
-                <p class="precio">$8.900</p>
-                <a href="detalle-producto.html" class="btn">Ver Detalle</a>
-            </article>
-
-            <article class="card">
-                <img src="https://via.placeholder.com/200" alt="Mesa de Ping Pong">
-                <h3>Mesa Plegable Oficial 25mm</h3>
-                <p class="precio">$320.000</p>
-                <a href="detalle-producto.html" class="btn">Ver Detalle</a>
+            <!-- Producto 3 -->
+            <article class="product-card">
+                <div style="height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="img/pelotas.jpg" alt="Set 12 Pelotas Pro 3 Estrellas" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                <h3>Set 12 Pelotas Tenis de Mesa Pro 3 Estrellas Abs 40+</h3>
+                <p class="price">$7.990</p>
+                <a href="detalle-producto.html#pelotas" class="btn">Ver Detalle</a>
             </article>
         </div>
     </main>
@@ -61,5 +65,7 @@
     <footer>
         <p>&copy; 2026 SpinZone. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

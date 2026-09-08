@@ -21,35 +21,34 @@
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Iniciar Sesión</a></li>
                 <li><a href="registro.html">Registrarse</a></li>
-                <li><a href="#" class="carrito-icon">🛒 <span>0</span></a></li>
+                <li><a href="carrito.html" class="carrito-icon">🛒 <span id="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h1>Noticias y Artículos de Tenis de Mesa</h1>
+    <main style="max-width: 800px; margin: 3rem auto; padding: 0 1rem;">
+        <h2 style="text-align: center; color: #0f172a; margin-bottom: 2rem;">Blog & Consejos</h2>
 
-        <section class="product-grid">
-            <article class="card">
-                <h3>Cómo elegir tu primera madera de tenis de mesa</h3>
-                <p>Descubre las diferencias entre maderas de control, allround y ofensivas según tu estilo de juego.</p>
-                <br>
-                <a href="detalle-blog-1.html" class="btn">Leer Artículo</a>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <article style="background: white; padding: 1.5rem; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                <h3 style="color: #2563eb; margin-top: 0;">¿Cómo elegir tu primera madera de tenis de mesa?</h3>
+                <p style="color: #64748b; line-height: 1.6;">Aprende las diferencias entre maderas ofensivas (OFF) y de control (ALL) para adaptar el material a tu estilo de juego.</p>
             </article>
 
-            <article class="card">
-                <h3>Mantenimiento y cuidado de tus gomas</h3>
-                <p>Aprende a limpiar y conservar la adherencia de tus gomas para prolongar su vida útil.</p>
-                <br>
-                <a href="detalle-blog-2.html" class="btn">Leer Artículo</a>
+            <article style="background: white; padding: 1.5rem; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                <h3 style="color: #2563eb; margin-top: 0;">Cuidado y mantenimiento de las gomas</h3>
+                <p style="color: #64748b; line-height: 1.6;">Manejar la limpieza adecuada de la superficie de tus gomas después de cada entrenamiento extiende su vida útil y adherencia.</p>
             </article>
-        </section>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 SpinZone. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        const carrito = JSON.parse(localStorage.getItem('carritoSpinZone')) || [];
+        document.getElementById('cart-count').innerText = carrito.reduce((acc, i) => acc + i.cantidad, 0);
+    </script>
 </body>
 </html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpinZone - Mi Carrito</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>SpinZone 🏓</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="carrito.html" class="carrito-icon">🛒 <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 800px; margin: 3rem auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+        <h2 style="margin-bottom: 1.5rem; color: #0f172a; text-align: center;">Carrito de Compras</h2>
+
+        <div id="carritoVacio" style="text-align: center; padding: 2rem; display: none;">
+            <p style="color: #64748b; font-size: 1.1rem;">Tu carrito está vacío.</p>
+            <a href="productos.html" class="btn" style="margin-top: 1rem; display: inline-block;">Ir al Catálogo</a>
+        </div>
+
+        <div id="contenidoCarrito">
+            <div id="listaProductos" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;"></div>
+
+            <div style="border-top: 2px solid #e2e8f0; padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; color: #0f172a;">Total:</h3>
+                <span id="totalPrecio" style="font-size: 1.8rem; font-weight: bold; color: #2563eb;">$0</span>
+            </div>
+
+            <button onclick="finalizarCompra()" class="btn" style="width: 100%; padding: 0.9rem; font-size: 1.1rem; margin-top: 1.5rem;">Finalizar Compra</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SpinZone. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function cargarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carritoSpinZone')) || [];
+            const listaContainer = document.getElementById('listaProductos');
+            const carritoVacio = document.getElementById('carritoVacio');
+            const contenidoCarrito = document.getElementById('contenidoCarrito');
+            const totalPrecioElement = document.getElementById('totalPrecio');
+            const countElement = document.getElementById('cart-count');
+
+            let totalItems = 0;
+            let totalPagar = 0;
+
+            if (carrito.length === 0) {
+                carritoVacio.style.display = 'block';
+                contenidoCarrito.style.display = 'none';
+                countElement.innerText = 0;
+                return;
+            }
+
+            carritoVacio.style.display = 'none';
+            contenidoCarrito.style.display = 'block';
+            listaContainer.innerHTML = '';
+
+            carrito.forEach((prod, index) => {
+                totalItems += prod.cantidad;
+                const subtotal = prod.precio * prod.cantidad;
+                totalPagar += subtotal;
+
+                listaContainer.innerHTML += `
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: #f8fafc; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="${prod.imagen}" style="width: 60px; height: 60px; object-fit: contain; background: white; border-radius: 6px; padding: 4px;">
+                            <div>
+                                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">${prod.nombre}</h4>
+                                <p style="margin: 0.2rem 0 0 0; color: #64748b; font-size: 0.9rem;">$${prod.precio.toLocaleString()} x ${prod.cantidad}</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <strong style="color: #2563eb; font-size: 1.1rem;">$${subtotal.toLocaleString()}</strong>
+                            <button onclick="eliminarItem(${index})" style="background: #ef4444; color: white; border: none; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer;">X</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            countElement.innerText = totalItems;
+            totalPrecioElement.innerText = '$' + totalPagar.toLocaleString();
+        }
+
+        function eliminarItem(index) {
+            let carrito = JSON.parse(localStorage.getItem('carritoSpinZone')) || [];
+            carrito.splice(index, 1);
+            localStorage.setItem('carritoSpinZone', JSON.stringify(carrito));
+            cargarCarrito();
+        }
+
+        function finalizarCompra() {
+            const usuario = JSON.parse(localStorage.getItem('sesionActiva'));
+            
+            if (!usuario) {
+                alert('Debes iniciar sesión para realizar una compra.');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            alert(`¡Gracias por tu compra, ${usuario.nombre}! Tu pedido ha sido procesado con éxito.`);
+            localStorage.removeItem('carritoSpinZone');
+            cargarCarrito();
+        }
+
+        window.addEventListener('DOMContentLoaded', cargarCarrito);
+    </script>
+</body>
+</html>

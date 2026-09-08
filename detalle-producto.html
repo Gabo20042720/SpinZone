@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpinZone - Detalle de Producto</title>
+    <title>SpinZone - Detalle del Producto</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -21,31 +21,118 @@
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Iniciar Sesión</a></li>
                 <li><a href="registro.html">Registrarse</a></li>
-                <li><a href="#" class="carrito-icon">🛒 <span>0</span></a></li>
+                <li><a href="carrito.html" class="carrito-icon">🛒 <span id="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section style="background: white; padding: 2rem; border-radius: 8px; display: flex; gap: 2rem; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 250px;">
-                <img src="img/paleta.jpg" alt="Paleta Profesional Carbono Off+" style="max-width: 100%; border-radius: 8px;">
+    <main style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+        <a href="productos.html" class="btn" style="background-color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; display: inline-block;">← Volver al Catálogo</a>
+
+        <!-- DETALLE PRODUCTO 1: MADERO -->
+        <article id="madero" class="producto-detalle" style="background: white; padding: 2.5rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px; text-align: center; background: #f8fafc; padding: 1.5rem; border-radius: 8px;">
+                <img src="img/paleta.jpg" alt="Madero Paleta K11 Loki" style="max-width: 100%; max-height: 250px; object-fit: contain;">
             </div>
-            <div style="flex: 2; min-width: 250px;">
-                <h1>Paleta Profesional Carbono Off+</h1>
-                <p class="price" style="font-size: 1.5rem;">$45.000</p>
-                <p>Madera de 5 capas de madera + 2 capas de carbono. Ideal para jugadores ofensivos que buscan velocidad y estabilidad en golpes media distancia.</p>
-                <br>
-                <button class="btn">Añadir al Carrito</button>
-                <a href="productos.html" class="btn" style="background-color: #64748b;">Volver al Catálogo</a>
+            <div style="flex: 2; min-width: 280px; display: flex; flex-direction: column; gap: 0.8rem;">
+                <h2 style="font-size: 1.6rem; color: #0f172a; margin: 0;">Madero Paleta Profesional Tenis De Mesa 7 Capas K11 Loki</h2>
+                <p class="price" style="font-size: 1.8rem; color: #2563eb; font-weight: bold; margin: 0;">$32.990</p>
+                <div style="border-top: 1px dashed #cbd5e1; margin: 0.5rem 0;"></div>
+                <strong style="color: #334155;">Descripción del Producto:</strong>
+                <p style="line-height: 1.6; color: #475569; margin: 0;">
+                    Madera de alta calidad compuesta por 7 capas seleccionadas con tecnología K11 Loki. Ofrece un equilibrio perfecto entre velocidad y control para jugadores de nivel intermedio a avanzado.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <button class="btn" onclick="agregarAlCarrito('Madero Paleta Profesional K11 Loki', 32990, 'img/paleta.jpg')">Añadir al Carrito</button>
+                </div>
             </div>
-        </section>
+        </article>
+
+        <!-- DETALLE PRODUCTO 2: GOMA -->
+        <article id="goma" class="producto-detalle" style="background: white; padding: 2.5rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px; text-align: center; background: #f8fafc; padding: 1.5rem; border-radius: 8px;">
+                <img src="img/goma.jpg" alt="Goma Loki Arthur Asia" style="max-width: 100%; max-height: 250px; object-fit: contain;">
+            </div>
+            <div style="flex: 2; min-width: 280px; display: flex; flex-direction: column; gap: 0.8rem;">
+                <h2 style="font-size: 1.6rem; color: #0f172a; margin: 0;">Goma Tenis de Mesa Loki Arthur Asia</h2>
+                <p class="price" style="font-size: 1.8rem; color: #2563eb; font-weight: bold; margin: 0;">$27.990</p>
+                <div style="border-top: 1px dashed #cbd5e1; margin: 0.5rem 0;"></div>
+                <strong style="color: #334155;">Descripción del Producto:</strong>
+                <p style="line-height: 1.6; color: #475569; margin: 0;">
+                    Goma profesional con esponja dura de alta densidad diseñada para un ataque destructivo de topspin. Su superficie adherente otorga un agarre óptimo.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <button class="btn" onclick="agregarAlCarrito('Goma Tenis de Mesa Loki Arthur Asia', 27990, 'img/goma.jpg')">Añadir al Carrito</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- DETALLE PRODUCTO 3: PELOTAS -->
+        <article id="pelotas" class="producto-detalle" style="background: white; padding: 2.5rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px; text-align: center; background: #f8fafc; padding: 1.5rem; border-radius: 8px;">
+                <img src="img/pelotas.jpg" alt="Set Pelotas ABS 40+" style="max-width: 100%; max-height: 250px; object-fit: contain;">
+            </div>
+            <div style="flex: 2; min-width: 280px; display: flex; flex-direction: column; gap: 0.8rem;">
+                <h2 style="font-size: 1.6rem; color: #0f172a; margin: 0;">Set 12 Pelotas Tenis de Mesa Pro 3 Estrellas Abs 40+</h2>
+                <p class="price" style="font-size: 1.8rem; color: #2563eb; font-weight: bold; margin: 0;">$7.990</p>
+                <div style="border-top: 1px dashed #cbd5e1; margin: 0.5rem 0;"></div>
+                <strong style="color: #334155;">Descripción del Producto:</strong>
+                <p style="line-height: 1.6; color: #475569; margin: 0;">
+                    Pack de 12 pelotas profesionales de 3 estrellas fabricadas en material ABS de alta resistencia. Garantizan un bote regular y preciso.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <button class="btn" onclick="agregarAlCarrito('Set 12 Pelotas Pro 3 Estrellas Abs 40+', 7990, 'img/pelotas.jpg')">Añadir al Carrito</button>
+                </div>
+            </div>
+        </article>
     </main>
 
     <footer>
         <p>&copy; 2026 SpinZone. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        function mostrarProductoSeleccionado() {
+            const productos = document.querySelectorAll('.producto-detalle');
+            productos.forEach(prod => prod.style.display = 'none');
+
+            const hash = window.location.hash;
+            if (hash) {
+                const seleccionado = document.querySelector(hash);
+                if (seleccionado) {
+                    seleccionado.style.display = 'flex';
+                    return;
+                }
+            }
+            if (productos.length > 0) productos[0].style.display = 'flex';
+        }
+
+        function actualizarContador() {
+            const carrito = JSON.parse(localStorage.getItem('carritoSpinZone')) || [];
+            const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+            document.getElementById('cart-count').innerText = totalItems;
+        }
+
+        function agregarAlCarrito(nombre, precio, imagen) {
+            let carrito = JSON.parse(localStorage.getItem('carritoSpinZone')) || [];
+            
+            const index = carrito.findIndex(prod => prod.nombre === nombre);
+            if (index !== -1) {
+                carrito[index].cantidad += 1;
+            } else {
+                carrito.push({ nombre, precio, imagen, cantidad: 1 });
+            }
+
+            localStorage.setItem('carritoSpinZone', JSON.stringify(carrito));
+            actualizarContador();
+            alert(`¡Se ha añadido "${nombre}" al carrito!`);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            mostrarProductoSeleccionado();
+            actualizarContador();
+        });
+        window.addEventListener('hashchange', mostrarProductoSeleccionado);
+    </script>
 </body>
 </html>
