@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpinZone - Detalle Producto</title>
+    <title>SpinZone - Detalle de Producto</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <header>
         <div class="logo">
             <h1>SpinZone 🏓</h1>
@@ -26,20 +27,25 @@
     </header>
 
     <main>
-        <div class="card" style="max-width: 600px; margin: 0 auto; text-align: left;">
-            <img src="https://via.placeholder.com/400" alt="Paleta Profesional" style="width: 100%; height: auto;">
-            <h2>Paleta Profesional Carbono Off+</h2>
-            <p class="precio">$45.000</p>
-            <p><strong>Composición:</strong> 5 capas de madera + 2 capas de fibra de carbono para máxima velocidad y control.</p>
-            <p><strong>Nivel:</strong> Avanzado / Competición Aprobado por la ITTF.</p>
-            <button class="btn" style="width: 100%; margin-top: 15px;">Añadir al Carrito 🛒</button>
-            <br><br>
-            <a href="productos.html">← Volver al catálogo</a>
-        </div>
+        <section style="background: white; padding: 2rem; border-radius: 8px; display: flex; gap: 2rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px;">
+                <img src="img/paleta.jpg" alt="Paleta Profesional Carbono Off+" style="max-width: 100%; border-radius: 8px;">
+            </div>
+            <div style="flex: 2; min-width: 250px;">
+                <h1>Paleta Profesional Carbono Off+</h1>
+                <p class="price" style="font-size: 1.5rem;">$45.000</p>
+                <p>Madera de 5 capas de madera + 2 capas de carbono. Ideal para jugadores ofensivos que buscan velocidad y estabilidad en golpes media distancia.</p>
+                <br>
+                <button class="btn">Añadir al Carrito</button>
+                <a href="productos.html" class="btn" style="background-color: #64748b;">Volver al Catálogo</a>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 SpinZone. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
